@@ -8,7 +8,6 @@ class Campaign {
     private Integer campaign_id;
     private String name;
     private String description;
-    private Player master;
     private List <Player> players;
     private ImageIcon image;
 }
