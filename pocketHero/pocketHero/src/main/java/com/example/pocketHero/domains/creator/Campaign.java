@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-class Campaign {
+public class Campaign {
     private Integer campaign_id;
     private String name;
     private String description;

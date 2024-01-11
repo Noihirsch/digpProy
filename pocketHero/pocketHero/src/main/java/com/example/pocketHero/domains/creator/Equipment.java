@@ -1,5 +1,7 @@
 package com.example.pocketHero.domains.creator;
 
-public class Race {
+import java.util.List;
+
+public class Equipment {
     
 }
