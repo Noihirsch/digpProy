@@ -1,4 +1,4 @@
-package com.example.pocketHero.domains;
+package com.example.pocketHero.domains.creator;
 
 public class Character {
 
