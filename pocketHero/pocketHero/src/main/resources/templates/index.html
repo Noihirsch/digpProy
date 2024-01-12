@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Hero</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        body {
+            margin: 0;   
+            overflow: hidden;
+        }
+
+        nav {
+            z-index: 3;
+        }
+
+        .title1
+        {
+          color: green;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    </nav>
+    <div class="background">
+        <h1>Empieza tu aventura, hoy</h1>
+        <form method="post" action="#" th:action="@{/user/new/submit}" th:object="${playerForm}">
+          <label><input id="email" th:field="*{email}" placeholder="Correo electrónico" /> </label><br />
+          <label><input type="password" id="password" th:field="*{password}" placeholder="Contraseña" /></label><br/>
+      
+  </div>
+</body>
+</html>
