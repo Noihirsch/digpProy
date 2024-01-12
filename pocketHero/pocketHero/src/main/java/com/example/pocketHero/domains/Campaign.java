@@ -12,13 +12,14 @@ import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
-
+@EqualsAndHashCode(of="id")
 @Entity
 public class Campaign {
     public Campaign(){}
@@ -27,7 +28,7 @@ public class Campaign {
     @GeneratedValue
     @Column(name="campaign_id")
     @Min(value = 0)
-    private Long campaignId;
+    private Long id;
 
     @NotEmpty
     private String name; 
