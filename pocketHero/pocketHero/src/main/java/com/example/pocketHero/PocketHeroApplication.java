@@ -10,4 +10,6 @@ public class PocketHeroApplication {
 		SpringApplication.run(PocketHeroApplication.class, args);
 	}
 
+	
+
 }

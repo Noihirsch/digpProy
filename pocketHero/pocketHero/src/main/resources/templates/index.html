@@ -6,34 +6,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pocket Hero</title>
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
+        body {
+            width: auto;
+            height: 4472px;
+            margin: 0;
+        }
+        
+        .login {
+            height: 100vh;
+            width: 1957px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url("https://cdnb.artstation.com/p/assets/images/images/062/592/641/large/steph-johnstone-fertilityforestartstation1.jpg?1683521003"), lightgray 50% / cover no-repeat;
+            background-repeat: no-repeat;
+        }
+
+        .header {
+            width: 1756px;
+            height: 183px;
+            flex-shrink: 0;
+        }
+
+        #header {
+            padding-top: 7%;
+            padding-left: 10%;
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 10.439px 10.439px rgba(0, 0, 0, 0.25), 0px 6.153px 6.153px rgba(0, 0, 0, 0.25);
+            font-family: Draconis;
+            font-size: 140px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .form {
+            width: 500px;
+            height: 366px;
+            flex-shrink: 0;
+            margin-left: 748px;
+            margin-top: 200px;
+        }
+
+        input 
+        {
+            color: rgba(255, 255, 255, 0.80);
+            text-align: left;
+            text-shadow: 0px 3.361px 3.361px rgba(0, 0, 0, 0.25);
+            font-family: Archivo Narrow;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 5%;
+            width: 442.017px;
+            height: 56.303px;
+            flex-shrink: 0;
+            border-radius: 8.403px;
+            border: 2.521px solid #FFF;
+            background: rgba(22, 69, 55, 0.40);
+        }
+        .buttons {
+            width: 200px;
+            text-align: center;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 4px solid #000;
+            background-color: white;
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+
+
+        #email, #password
+        {
+            padding-left: 3%;
+        }
+
+
+
+        #enviar 
+        {
+            width: 200px;
+            height: 60px;
+            margin-left: 40px;
+            text-align: center;
+            color: rgba(63, 63, 63, 0.80);
+            text-align: center;
+            font-family: Kelly Slab;
+            font-size: 29.371px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            background-color: #77DC87;
+        }
+
+        #iniciarsesion
+        {
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            color: rgba(63, 63, 63, 0.80);
+            text-align: center;
+            font-family: Kelly Slab;
+            font-size: 29.371px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .termLine {
+            display: flex;
+            align-items: left; 
+        }
+        
+        #terms {
+            transform: scale(0.8);
+            align-items: left;
+        }
+
+        #term p
+        {
+            color: white;
+        }
+        
+
+
+
+
+    </style>
 </head>
 <body>
     
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid">
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-             data-bs-target="#navbarSupportedContent"
-             aria-controls="navbarSupportedContent" aria-expanded="false"
-             aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-            href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-            href="aboutus.html">FAQ</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-             href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-            href="login.html">Login</a></li>
-         </ul>
-         </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                        href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                        href="aboutus.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                        href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                        href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login">
+        <div class="header">
+            <h1 id="header">Empieza tu aventura hoy</h1><body>
+        </div>
+        <div class="form">
+            <form action="procesar.php" method="post" id="newUser">
+                <input type="text" name="nombre" id="email" maxlength="15" pattern="[A-Za-z ]{2,15}" title="correo" placeholder="Correo Electrónico" required/><br>
+                <input type="text" name="nombre" id="password" maxlength="15" pattern="[A-Za-z ]{2,15}" title="correo" placeholder="Contraseña" required/>
+                <div class="termLine">
+                <input type="checkbox" name="terms" id="terms"/>
+                <p>Acepto las condiciones y términos de servicio</p>
+                </div>
+                <div class="send">
+                    <input type="submit" value="Crear cuenta" class="buttons" id="enviar" />
+                    <input type="reset" value="Iniciar sesión" class="buttons" id="iniciarsesion" />
+                </div>
+                
+            </form>
+        </div>
     </div>
-</nav>
 
-<h2><div th:text="${welcome}"></div></h2>
-
-    
 </body>
 </html>
