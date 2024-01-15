@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "PocketHeroApplication",
+            "request": "launch",
+            "mainClass": "com.example.pocketHero.PocketHeroApplication",
+            "projectName": "pocketHero"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
