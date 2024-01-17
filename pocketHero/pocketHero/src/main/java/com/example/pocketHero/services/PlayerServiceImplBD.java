@@ -3,15 +3,18 @@ package com.example.pocketHero.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.example.pocketHero.DTOs.DTOPlayer;
+import com.example.pocketHero.domains.Campaign;
 import com.example.pocketHero.domains.Player;
+import com.example.pocketHero.repositories.CampaignRepository;
 import com.example.pocketHero.repositories.PlayerRepository;
 
 public class PlayerServiceImplBD implements PlayerService {
 
     @Autowired 
     PlayerRepository playerRepository;
+
+    @Autowired
+    CampaignRepository campaignRepository;
 
     public Player create(Player player){
         return playerRepository.save(player);
@@ -22,8 +25,7 @@ public class PlayerServiceImplBD implements PlayerService {
     }
 
     public Player findById(Long id){
-        return playerRepository.findById(id);
-
+        return playerRepository.findById(id).orElse(null);
     }
 
     public Player findByUsername(String username){
@@ -35,23 +37,15 @@ public class PlayerServiceImplBD implements PlayerService {
         return playerRepository.save(player);
     }
 
-    public DTOPlayer playerToDTO(Player player){
-        DTOPlayer dtoPlayer = new DTOPlayer();
-        dtoPlayer.setCampaign(player.getCampaign());
-        dtoPlayer.setEmail(player.getEmail());
-        dtoPlayer.setPassword(player.getPassword());
-        return dtoPlayer;
+    public void delete(Long id) {
+        playerRepository.deleteById(id);
+   }
+
+   public List <Player> findByCampaign(Long campaignId){
+    Campaign campaign =  campaignRepository.findById(campaignId).orElse(null);
+    if (campaign != null) {
+        return playerRepository.findByCampaign(campaign);}
+        return null;
     }
 
-    public Player findByEmail(String email){
-        return playerRepository.findByEmail(email);
-    }
-    
-    
-    
-
-
-
-    
-    
 }

@@ -18,8 +18,6 @@ import lombok.ToString;
 @Setter
 
 public class Player {
-        public Player(){}
-
     @Id
     @GeneratedValue
     @JoinColumn(name="id")
@@ -28,24 +26,22 @@ public class Player {
     @NotEmpty
     private String username;
 
+    @Email(message = "Debe tener formato email valido")
+    private String email;
+    
+    @NotEmpty
+    private String password; 
+
     @ToString.Exclude 
     @OneToMany
     @JoinColumn (name="CHARACTER_ID") //opcional
     private List <Character> listOfCharacters;
 
-    @Email (message = "Debe tener formato email válido")
-    @NotEmpty
-    private String email; 
-    
-    @NotEmpty
-    private String password; 
 
-      @ManyToOne
+    @ManyToOne
     @JoinColumn (name= "CAMPAIGN_ID", foreignKey = @ForeignKey(name="CAMPAIGN_KEY_FK"))
     @OnDelete (action = OnDeleteAction.CASCADE)
     private Campaign campaign;
 
-    @NotEmpty
-    private String icon; 
 
 }

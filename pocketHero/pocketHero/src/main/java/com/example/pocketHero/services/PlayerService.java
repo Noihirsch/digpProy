@@ -1,8 +1,6 @@
 package com.example.pocketHero.services;
 
 import java.util.List;
-
-import com.example.pocketHero.DTOs.DTOPlayer;
 import com.example.pocketHero.domains.Player;
 
 public interface PlayerService {
@@ -15,19 +13,8 @@ public interface PlayerService {
 
     Player findByUsername (String username);
 
-    void deleteByUsername(String username);
-
     Player edit(Player player);
 
-    DTOPlayer playerToDTO(Player player);
-
-
-    Player findByEmail(String email);    
-
-    
-
-    
-    
-
-    
+    List <Player> findByCampaign(Long campaignId);
+ 
 }
