@@ -18,6 +18,8 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/user")
 public class PlayerController {
+
+    
     @Autowired
     public PlayerService playerService;
 
