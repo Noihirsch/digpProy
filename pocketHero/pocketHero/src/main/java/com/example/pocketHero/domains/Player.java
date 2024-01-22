@@ -25,7 +25,6 @@ import lombok.ToString;
 
 public class Player {
     @Id
-    @GeneratedValue
     @Column(name="id")
     private Long id;
 

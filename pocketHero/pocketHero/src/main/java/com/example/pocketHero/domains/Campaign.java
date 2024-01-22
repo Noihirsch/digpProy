@@ -22,7 +22,6 @@ import lombok.Setter;
 @EqualsAndHashCode(of="id")
 @Entity
 public class Campaign {
-    public Campaign(){}
 
     @Id
     @GeneratedValue
@@ -35,6 +34,8 @@ public class Campaign {
 
     @NotEmpty
     private String description; 
+
+
 
 }
 
