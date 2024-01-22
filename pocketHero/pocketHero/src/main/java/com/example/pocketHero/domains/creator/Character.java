@@ -1,6 +1,7 @@
 package com.example.pocketHero.domains.creator;
 
 import com.example.pocketHero.domains.creator.background.Background;
+import com.example.pocketHero.domains.creator.race.Racial;
 
 public class Character {
 

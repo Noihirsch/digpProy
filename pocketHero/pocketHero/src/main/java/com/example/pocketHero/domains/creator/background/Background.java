@@ -16,6 +16,6 @@ public interface Background {
 
     List <Equipment> getEquipment();
 
-    String getLanguages();
+    List<String> getLanguages();
 }
  
