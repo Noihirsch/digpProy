@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.pocketHero.domains.Player;
 
-@Service
-public interface PlayerService  {
+
+public interface PlayerService {
 
     Player create(Player player);
 

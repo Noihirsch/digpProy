@@ -10,10 +10,5 @@ import java.util.List;
 
 public interface CampaignRepository extends JpaRepository<Campaign, Long> {
 
-    List<Campaign> findByName(String name); //pueden haber varias campañas con el mismo nombre.
-    List<Campaign> findUnstartedCampaigns(LocalDate date); //buscar campañas que no han empezado aún. 
-    
-
-
-
+    Campaign findByName(String name);
 }

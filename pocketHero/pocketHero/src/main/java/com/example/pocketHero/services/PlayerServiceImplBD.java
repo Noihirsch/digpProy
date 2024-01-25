@@ -3,11 +3,14 @@ package com.example.pocketHero.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.pocketHero.domains.Campaign;
 import com.example.pocketHero.domains.Player;
 import com.example.pocketHero.repositories.CampaignRepository;
 import com.example.pocketHero.repositories.PlayerRepository;
 
+@Service
 public class PlayerServiceImplBD implements PlayerService {
 
     @Autowired 
