@@ -1,9 +1,13 @@
 package com.example.pocketHero.services;
 
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.pocketHero.domains.Player;
 
-public interface PlayerService {
+@Service
+public interface PlayerService  {
 
     Player create(Player player);
 

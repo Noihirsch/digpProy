@@ -18,7 +18,7 @@ public class PocketHeroApplication {
 	@Bean
 	CommandLineRunner initData(PlayerService playerService, CampaignService campaignService) {
 		return args -> {
-			playerService.create(new Player("hola"));
+			playerService.create(new Player());
 
 
 		};

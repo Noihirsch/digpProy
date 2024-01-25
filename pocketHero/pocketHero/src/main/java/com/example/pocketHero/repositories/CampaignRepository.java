@@ -4,5 +4,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.pocketHero.domains.Campaign;
 
+import java.time.LocalDate;
+import java.util.List;
+
+
 public interface CampaignRepository extends JpaRepository<Campaign, Long> {
+
+    List<Campaign> findByName(String name); //pueden haber varias campañas con el mismo nombre.
+    List<Campaign> findUnstartedCampaigns(LocalDate date); //buscar campañas que no han empezado aún. 
+    
+
+
+
 }
