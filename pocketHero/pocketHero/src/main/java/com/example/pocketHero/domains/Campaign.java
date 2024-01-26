@@ -9,6 +9,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(of="id")
 @Entity
+@Table (name = "CAMPAIGN")
 public class Campaign {
 
     @Id
@@ -30,9 +32,11 @@ public class Campaign {
     private Long id;
 
     @NotEmpty
+    @Column(name="name")
     private String name; 
 
     @NotEmpty
+    @Column(name="description")
     private String description; 
 
 
