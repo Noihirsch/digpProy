@@ -1,240 +1,212 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-   
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pocket Hero</title>
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
-            @import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
-        body {
-            width: auto;
-            height: 4472px;
+        @import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
+
+        * {
             margin: 0;
+            height: auto;
         }
 
-        .navbar
-        {
-            background-color: transparent;
+        .login {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(https://images3.alphacoders.com/131/thumb-1920-1314645.jpg), lightgray 50% / cover no-repeat;
+            height: 30%;
         }
 
-        .navbar a {
-            font-family: 'Kelly Slab' !important;
-            color: white;
-            font-size: 26px;
-            margin-right: 20px; 
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
 
-        .navbar a:hover {
-            background-color: rgb(94, 131, 109);
+        .form input,
+        .form div {
+            margin: 10px 0;
+        }
+
+
+
+
+        #text1 {
+            margin: 10px;
+            text-align: left;
+            /* Align text to the left */
+        }
+
+        #text1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+            /* Add margin for spacing between text and image */
+            max-height: 30px;
+            /* Set a maximum height for the image */
+        }
+
+        .section1,
+        .section2,
+        .section3{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 10px;
+            width: 80%; /* Set the desired width, adjust as needed */
+            margin: auto; /* Center the section horizontally */
         }
         
-        .login {
-            height: 100vh;
-            width: 1957px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url("https://cdnb.artstation.com/p/assets/images/images/062/592/641/large/steph-johnstone-fertilityforestartstation1.jpg?1683521003"), lightgray 50% / cover no-repeat;
-            background-repeat: no-repeat;
+
+        .section4 {
+            align-items: center;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .header {
-            width: 1756px;
-            height: 183px;
+        .header {}
+
+        #title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
             flex-shrink: 0;
-        }
-
-        #header {
-            padding-top: 7%;
-            padding-left: 10%;
             color: #FFF;
             text-align: center;
             text-shadow: 0px 10.439px 10.439px rgba(0, 0, 0, 0.25), 0px 6.153px 6.153px rgba(0, 0, 0, 0.25);
             font-family: Draconis;
-            font-size: 140px;
+            font-size: 130px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
         }
 
-        .form {
-            width: 500px;
-            height: 366px;
+        #text4 {
+            text-align: center;
+            margin-top: 10px;
+            /* Add margin-top to create space between h4 and button */
+        }
+
+        footer {
+            height: 40%;
             flex-shrink: 0;
-            margin-left: 748px;
-            margin-top: 200px;
-        }
-
-        input 
-        {
-            color: rgba(255, 255, 255, 0.80);
-            text-align: left;
-            text-shadow: 0px 3.361px 3.361px rgba(0, 0, 0, 0.25);
-            font-family: Archivo Narrow;
-            font-size: 20px;
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-family: Arial;
+            font-size: 15px;
             font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            margin-bottom: 5%;
-            width: 442.017px;
-            height: 56.303px;
-            flex-shrink: 0;
-            border-radius: 8.403px;
-            border: 2.521px solid #FFF;
-            background: rgba(22, 69, 55, 0.40);
-        }
-        .buttons {
-            width: 200px;
-            text-align: center;
-            height: 60px;
-            flex-shrink: 0;
-            border-radius: 10px;
-            border: 4px solid #000;
-            background-color: white;
-            margin-bottom: 10px; /* Adjust as needed */
-        }
-
-
-        #email, #password
-        {
-            padding-left: 3%;
-        }
-
-
-
-        #enviar 
-        {
-            width: 200px;
-            height: 60px;
-            margin-left: 40px;
-            text-align: center;
-            color: rgba(63, 63, 63, 0.80);
-            text-align: center;
-            font-family: Kelly Slab;
-            font-size: 29.371px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            background-color: #77DC87;
-        }
-
-        #enviar:hover
-        {
-            background-color: #3c9939;
-            color: white;
-        }
-
-
-        #iniciarsesion
-        {
-            width: 200px;
-            height: 60px;
-            text-align: center;
-            color: rgba(63, 63, 63, 0.80);
-            text-align: center;
-            font-family: Kelly Slab;
-            font-size: 29.371px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-
-        #iniciarsesion:hover
-        {
-            background-color: #3c9939;
-            color: white;
-        }
-
-        .termLine {
-            display: flex;
-            text-align: start;
+            line-height:normal;
+            background-color: black;
         }
 
         
-        .termLine p{
-            display: flex;
-            text-align: start;
-            color: white;
-            font-family: Kelly Slab;
-            font-size: 20px;
-        }
-        
-        #terms {
-            transform: scale(0.5);
-            align-items: left;
-            border: 3px ;
-        }
-
-        #terms {
-            appearance: none; 
-            -moz-appearance: none;
-            width: 50px; 
-            height: 50px;
-            background-color: #ffffff; /* Set the background color of the checkbox */
-            border: 3px solid #000000; /* Set the border of the checkbox */
-            border-radius: 4px; /* Set border-radius for rounded corners */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            outline: none; /* Remove outline on focus */
-            margin-right: 5px; /* Add some space to the right of the checkbox */
-        }
-
-        
-        
-        #terms:checked {
-            background-color: #1e8551; /* Change background color when checkbox is checked */
-            border: 3px solidrgb(0, 0, 0)0; /* Change border color when checkbox is checked */
-        }
-
-
-
-
     </style>
 </head>
+
 <body>
-    
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                        href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                        href="aboutus.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                        href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                        href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="aboutus.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- LOGIN -->
     <div class="login">
         <div class="header">
-            <h1 id="header">Empieza tu aventura hoy</h1><body>
+            <h1 id="title">Empieza tu aventura hoy</h1>
+            <div class="form">
+                <form action="procesar.php" method="post" id="newUser">
+                    <input type="text" name="nombre" id="email" maxlength="15" pattern="[A-Za-z ]{2,15}" title="correo"
+                        placeholder="Correo Electrónico" required /><br>
+                    <input type="text" name="nombre" id="password" maxlength="15" pattern="[A-Za-z ]{2,15}"
+                        title="correo" placeholder="Contraseña" required />
+                    <div class="termLine">
+                        <input type="checkbox" name="terms" id="terms" />
+                        <p>Acepto las condiciones y términos de servicio</p>
+                    </div>
+                    <div class="send">
+                        <input type="submit" value="Crear cuenta" class="buttons" id="enviar" />
+                        <input type="reset" value="Iniciar sesión" class="buttons" id="iniciarsesion" />
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form">
-            <form action="procesar.php" method="post" id="newUser">
-                <input type="text" name="nombre" id="email" maxlength="15" pattern="[A-Za-z ]{2,15}" title="correo" placeholder="Correo Electrónico" required/><br>
-                <input type="text" name="nombre" id="password" maxlength="15" pattern="[A-Za-z ]{2,15}" title="correo" placeholder="Contraseña" required/>
-                <div class="termLine">
-                    <input type="checkbox" name="terms" id="terms"/>
-                    <p>Acepto las condiciones y términos de servicio</p>
-                </div>
-                <div class="send">
-                    <input type="submit" value="Crear cuenta" class="buttons" id="enviar" />
-                    <input type="reset" value="Iniciar sesión" class="buttons" id="iniciarsesion" />
-                </div>
-                
-            </form>
+    </div>
+    <!-- LOGIN FIN -->
+    <div class="section1 my-auto" style="background-color: pink;">
+        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
+        <div id="text1">
+            <h4>Tus personajes de Dungeons and Dragons, todos en un mismo lugar</h4>
+            <p>Pocket Hero es un creador de personajes ligero, accesible y de fuente abierta diseñado para el juego de
+                rol Dungeons and Dragons, quinta edición. Guarda tus fichas de personaje y accede a ellas desde
+                cualquier parte.</p>
         </div>
     </div>
 
+    <div class="section2 my-auto" style="background-color: orange;">
+        <div id="text2">
+            <h4>Mantén a tus enemigos cerca y a tus jugadores más</h4>
+            <p>Dirigir una partida nunca ha sido tan fácil. Mejora tu estátus de Jugador
+                a Director y conecta con los miembros de tu campaña y sus personajes en todo
+                momento.
+            </p>
+        </div>
+        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
+    </div>
+
+    <div class="section3 my-auto" style="background-color: rgb(240, 180, 180);">
+        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
+        <div id="text3">
+            <h4>Encuentra partidas y descubre nuevos mundos</h4>
+            <p>Dirigir una partida nunca ha sido tan fácil. Mejora tu estátus de Jugador
+                a Director y conecta con los miembros de tu campaña y sus personajes en todo
+                momento.
+            </p>
+        </div>
+    </div>
+    <div class="section4 my-auto" style="background-color: olivedrab;">
+        <h4 id="text4">Encuéntranos en redes sociales</h4>
+        <div class="buttons">
+            <button type="button" class="btn btn-primary">Discord</button>
+            <button type="button" class="btn btn-primary">Twitter</button>
+            <button type="button" class="btn btn-primary">Twitch</button>
+        </div>
+        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
+    </div>
+
+    </div>
+    <footer>
+        <p>Pocket Hero</p> | <a href="#"> Términos Legales </a> | <a href="#">Política de privacidad</a><br>
+        ©2023-2024. All Rights Reserved. 
+        A Coruña, Spain. 
+    </footer>
+
 </body>
+
 </html>
