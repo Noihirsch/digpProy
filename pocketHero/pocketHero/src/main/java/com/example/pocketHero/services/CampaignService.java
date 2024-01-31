@@ -5,7 +5,6 @@ import java.util.List;
 import com.example.pocketHero.domains.Campaign;
 
 
-
 public interface CampaignService {
 
     Campaign create(Campaign campaign);

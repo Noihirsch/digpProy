@@ -13,19 +13,24 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/aboutus")
+    @GetMapping("/about-us")
     public String showAboutUs() {
-        return "index/aboutus";
+        return "/aboutus";
     }
 
-    @GetMapping("/campaignlist")
+    @GetMapping("/create")
+    public String showCreator() {
+        return "/creator/createCharacter";
+    }
+
+    @GetMapping("/join-a-game")
     public String showCampaignList() {
-        return "index/campaignlist";
+        return "/campaignlist";
     }
 
     @GetMapping("/contact")
     public String showContactInfo() {
-        return "index/contact";
+        return "/contact";
     }
 
     
