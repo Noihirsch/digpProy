@@ -9,4 +9,13 @@ public class PocketHeroApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PocketHeroApplication.class, args);
 	}
+	@Bean
+	CommandLineRunner initData(PlayerService playerService, CampaignService campaignService) {
+		return args -> {
+			playerService.create(new Player());
+
+
+		};
+
+}
 }

@@ -1,6 +1,7 @@
 package com.example.pocketHero.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +17,7 @@ import com.example.pocketHero.services.PlayerService;
 import jakarta.validation.Valid;
 
 @Controller
+@Primary
 @RequestMapping("/user")
 public class PlayerController {
 
