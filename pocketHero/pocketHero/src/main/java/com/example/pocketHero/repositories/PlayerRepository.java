@@ -9,9 +9,6 @@ import java.util.List;
 
 public interface PlayerRepository extends JpaRepository <Player, Long> {
 
-
-    public List <Player> findByCampaign(Campaign campaign);
-
     public Player findByUsername(String username);
 
 }

@@ -44,11 +44,5 @@ public class PlayerServiceImplBD implements PlayerService {
         playerRepository.deleteById(id);
    }
 
-   public List <Player> findByCampaign(Long campaignId){
-    Campaign campaign =  campaignRepository.findById(campaignId).orElse(null);
-    if (campaign != null) {
-        return playerRepository.findByCampaign(campaign);}
-        return null;
-    }
 
 }

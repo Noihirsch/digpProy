@@ -19,6 +19,5 @@ public interface PlayerService {
 
     Player edit(Player player);
 
-    List <Player> findByCampaign(Long campaignId);
  
 }

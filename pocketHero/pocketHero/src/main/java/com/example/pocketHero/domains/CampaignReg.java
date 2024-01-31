@@ -2,32 +2,32 @@ package com.example.pocketHero.domains;
 
 import java.time.LocalDate;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.cglib.core.Local;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
-@Entity
+
+@Embeddable
 public class CampaignReg {
-
-    @NotEmpty
-    @Id
-    private int campaign_id;
-
-    @NotEmpty
-    private int dm_id;
-
     @DateTimeFormat
-    private LocalDate createdIn;
+    private LocalDate startedIn;
 
     @DateTimeFormat
     private LocalDate endedIn;

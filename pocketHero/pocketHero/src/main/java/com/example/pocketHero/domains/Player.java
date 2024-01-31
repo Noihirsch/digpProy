@@ -3,23 +3,29 @@ import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table (name = "PLAYER")
+
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+
 
 public class Player {
+    
     @Id
+    @GeneratedValue
     @Column(name="player_id")
     private Long id;
 
