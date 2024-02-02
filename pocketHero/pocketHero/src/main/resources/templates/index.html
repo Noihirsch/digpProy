@@ -3,331 +3,664 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pocket Hero</title>
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pocket Hero</title>
+  <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Kelly+Slab&family=PT+Sans&family=Pacifico&family=Roboto:wght@100&display=swap');
 
-        * {
-            margin: 0;
-            height: auto;
-        }
+    * {
+      margin: 0;
+      height: auto;
+    }
 
-        .login {
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(https://images3.alphacoders.com/131/thumb-1920-1314645.jpg), lightgray 50% / cover no-repeat;
-            height: 30%;
-        }
+    body {
+      height: 100%;
+    }
 
-        .form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
+    .login {
+      padding-top: 5%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(https://images3.alphacoders.com/131/thumb-1920-1314645.jpg), lightgray 50% / cover no-repeat;
+      height: 800px;
+    }
 
-        .form input,
-        .form div {
-            margin: 10px 0;
-        }
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
 
+    .form input,
+    .form div {
+      margin: 10px 0;
+    }
 
+    .termLine {
+      display: flex;
+      align-items: left;
+      text-align: start;
+    }
 
+    hr {
+      border:none;
+      height: 20px;
+       width: 90%;
+      height: 50px;
+      margin-top: 0;
+      border-bottom: 1px solid #906547;
+      box-shadow: 0 20px 20px -20px #333;
+      margin: -50px auto 10px; 
+    }
+    
+    .termLine p {
+      display: flex;
+      text-align: start;
+      color: white;
+      font-family: Kelly Slab;
+      font-size: 20px;
+    }
 
-        #text1 {
-            margin: 10px;
-            text-align: left;
+    #terms {
+      transform: scale(0.8);
+      transform: scale(0.5);
+      align-items: left;
+      border: 3px;
+    }
 
-        }
+    #term p {
+      color: white;
+      font-style: Archivo Narrow;
+    }
 
-        #text1 img {
-            vertical-align: middle;
-            margin-right: 10px;
-
-            max-height: 30px;
-
-        }
-
-        .section1,
-        .section2,
-        .section3 {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin: 10px;
-            width: 80%;
-            margin: auto;
-        }
-
-
-        .section4 {
-            align-items: center;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .header {}
-
-        #title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            flex-shrink: 0;
-            color: #FFF;
-            text-align: center;
-            text-shadow: 0px 10.439px 10.439px rgba(0, 0, 0, 0.25), 0px 6.153px 6.153px rgba(0, 0, 0, 0.25);
-            font-family: Draconis;
-            font-size: 130px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-
-        #text4 {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        footer {
-            height: 40%;
-            flex-shrink: 0;
-            color: #FFF;
-            text-align: center;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            font-family: Arial;
-            font-size: 15px;
-            font-style: normal;
-            line-height: normal;
-            background-color: black;
-        }
-
-        /* Color of the links BEFORE scroll */
-.navbar-scroll .nav-link,
-.navbar-scroll .navbar-toggler-icon {
-  color: #FFF;
-  text-align: center;
-  -webkit-text-stroke-width: 0.5;
-  -webkit-text-stroke-color: #FFF;
-  font-family: "Kelly Slab";
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link,
-.navbar-scrolled .navbar-toggler-icon {
-  color: #4f4f4f;
-}
+    #terms {
+      appearance: none;
+      -moz-appearance: none;
+      width: 50px;
+      height: 50px;
+      background-color: #ffffff;
+      border: 3px solid #000000;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+      margin-right: 5px;
+    }
 
 
-.navbar-scrolled {
-  background-color: #c22424;
-}
 
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-scroll.navbar-scrolled {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
 
-    </style>
+
+
+    #text1 {
+      margin: 10px;
+      text-align: left;
+
+    }
+
+    #text1 img {
+      vertical-align: middle;
+      margin-right: 10px;
+
+      max-height: 30px;
+
+    }
+
+    .section1,
+    .section2,
+    .section3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+      width: 75%;
+      height: 600px;
+      margin: auto;
+
+    }
+
+    .section1,
+    .section2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+      width: 75%;
+      height: 600px;
+      margin: auto;
+
+    }
+
+    .section3
+    {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+      width: 75%;
+      height: 800px;
+      margin: auto;
+
+    }
+
+    .section4 {
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+      width: 75%;
+      height: 600px;
+      margin: auto;
+    }
+
+    .section4 h4 {
+      padding-top: 90px;
+      font-size: 50px;
+      text-align: center;
+      flex: auto;
+    }
+
+    .section4 img {
+      margin-top: 30px;
+      width: 60%;
+      height: 50%;
+
+    }
+
+
+
+
+    @media screen and (max-width: 820px) {
+      h4 {
+        font-size: 30px; 
+      }
+
+      .login 
+      {
+        height: 900px;
+      }
+ 
+      .section1 p,
+      .section2 p,
+      .section3 p,
+      .section4 p {
+        font-size: 18px; 
+      }
+
+      .section1,
+      .section2,
+      .section3,
+      .section4 {
+        margin: 6% auto; 
+        height: auto; 
+        flex-direction: column; 
+      }
+    
+      .section1 img,
+      .section2 img,
+      .section3 img,
+      .section4 img {
+        height: auto; 
+        width: 100%; 
+        margin: 5% 0; 
+      }
+    
+
+      .buttons {
+        width: 150px; 
+        height: 50px; 
+        font-size: 18px; 
+      }
+    }
+
+
+
+    .section1 p,
+    .section2 p,
+    .section3 p,
+    .section4 p {
+      margin-top: 5%;
+      font-family: Archivo Narrow;
+      font-size: 25px;
+      margin-right: 85px;
+      margin-left: 80px;
+    }
+
+
+    h4 {
+      text-align: center;
+      font-family: 'Kelly Slab';
+      font-size: 50px;
+      margin-right: 50px;
+    }
+
+    .section4 {
+      align-items: center;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .header {}
+
+    #title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 3%;
+      height: 100%;
+      padding-bottom: 4%;
+      flex-shrink: 0;
+      color: #FFF;
+      text-align: center;
+      text-shadow: 0px 10.439px 10.439px rgba(0, 0, 0, 0.25), 0px 6.153px 6.153px rgba(0, 0, 0, 0.25);
+      font-family: Draconis;
+      font-size: 130px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    #text4 {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+
+    #email,
+    #password {
+      padding-left: 3%;
+    }
+
+
+
+    #enviar {
+      width: 200px;
+      height: 60px;
+      margin-left: 40px;
+      text-align: center;
+      color: rgba(63, 63, 63, 0.80);
+      text-align: center;
+      font-family: Kelly Slab;
+      font-size: 29.371px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      background-color: #77DC87;
+    }
+
+    #iniciarsesion {
+      width: 200px;
+      height: 60px;
+      text-align: center;
+      color: rgba(63, 63, 63, 0.80);
+      text-align: center;
+      font-family: Kelly Slab;
+      font-size: 29.371px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    input {
+      color: rgba(255, 255, 255, 0.80);
+      text-align: left;
+      text-shadow: 0px 3.361px 3.361px rgba(0, 0, 0, 0.25);
+      font-family: Archivo Narrow;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 5%;
+      width: 442.017px;
+      height: 56.303px;
+      flex-shrink: 0;
+      border-radius: 8.403px;
+      border: 2.521px solid #FFF;
+      background: rgba(22, 69, 55, 0.40);
+    }
+
+    .buttons {
+      width: 200px;
+      text-align: center;
+      height: 60px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      border: 4px solid #000;
+      background-color: white;
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin-left: 40px;
+    }
+
+
+    footer {
+      height: 40%;
+      flex-shrink: 0;
+      color: #FFF;
+      text-align: center;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: Kelly Slab;
+      font-size: 18px;
+      font-style: normal;
+      line-height: 2.5em;
+      background-color: black;
+      text-decoration: none;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    footer a
+    {
+      color: green;
+    }
+
+    .logo:hover a{
+      color: #b5ff2d;
+    }
+    .navbar-nav .nav-link {
+      margin-right: 20px;
+
+    }
+    .navbar-nav .nav-link:hover {
+      color: #b5ff2d;
+    }
+
+    .navbar-scroll .nav-link,
+    .navbar-scroll .navbar-toggler-icon {
+      color: #FFF;
+      text-align: center;
+      font-family: "Kelly Slab";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px #000;
+    }
+
+
+
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .navbar-toggler-icon {
+      color: #ffffff;
+    }
+
+
+    .navbar-scrolled {
+      background-color: #ffffff;
+    }
+
+    .navbar.navbar-scroll.navbar-scrolled {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+
+    .termLine {
+      display: flex;
+      align-items: left;
+      text-align: start;
+    }
+
+
+    .termLine p {
+      display: flex;
+      text-align: start;
+      color: white;
+      font-family: Kelly Slab;
+      font-size: 20px;
+    }
+
+    #terms {
+      transform: scale(0.8);
+      transform: scale(0.5);
+      align-items: left;
+      border: 3px;
+    }
+
+    #term p {
+      color: white;
+    }
+
+    #terms {
+      appearance: none;
+      -moz-appearance: none;
+      width: 50px;
+      height: 50px;
+      background-color: #ffffff;
+      border: 3px solid #000000;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+      margin-right: 5px;
+    }
+
+
+
+    #terms:checked {
+      background: #1e8551;
+      border-color: rgb(0, 0, 0);
+    }
+
+    .divider {
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+    }
+
+    .divider img {
+      height: 40px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .social {
+      padding-top: 50px;
+    }
+
+    .social button {
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      margin-right: 50px;
+    }
+
+    .social button img {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .logo a
+
+    {
+      font-size: 60px;
+      font-family: 'Kelly Slab';
+      text-decoration: none;
+      color:white;
+      text-shadow:
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px #000;
+
+    }
+    .logo img {
+
+      height: 100px;
+  }
+  
+
+  </style>
 </head>
 
 <body>
-    <!-- NAVBAR -->
-<!--Main Navigation-->
-<header>
-    <!-- Animated navbar-->
-   <!-- Animated navbar-->
-<nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
-    <div class="container-fluid">
-      <button
-        class="navbar-toggler ps-0"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span
-          class="navbar-toggler-icon"
-        >
-          <i class="fas fa-bars"></i>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#intro">Home</a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
-              rel="nofollow"
-              target="_blank"
-              >Join a game</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://mdbootstrap.com/docs/standard/"
-              target="_blank"
-              >Vault</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://mdbootstrap.com/docs/standard/"
-              target="_blank"
-              >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://mdbootstrap.com/docs/standard/"
-              target="_blank"
-              >Help</a
-            >
-          </li>
-        </ul>
-  
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Use ms-auto here -->
-          <!-- Icons -->
-          <li class="nav-item">
-            <a
-              class="nav-link pe-2"
-              href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
-              rel="nofollow"
-              target="_blank"
-            >
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link px-2"
-              href="https://www.facebook.com/mdbootstrap"
-              rel="nofollow"
-              target="_blank"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link px-2"
-              href="https://twitter.com/MDBootstrap"
-              rel="nofollow"
-              target="_blank"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link ps-2"
-              href="https://github.com/mdbootstrap/mdb-ui-kit"
-              rel="nofollow"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-        </ul>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+      <div class="container-fluid">
+        <div class="logo">
+          <a href="https://imgur.com/FKBJePn"><img src="https://i.imgur.com/FKBJePn.png"/>Pocket Hero</a>
+      </div>
+        <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <i class="fas fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#intro">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+                target="_blank">Buscar partida</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Nostros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Ayuda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Mi Perfil</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link pe-2" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ps-2" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  </header>
+
+
+  <div class="login">
+    <div class="header">
+      <h1 id="title">Empieza tu aventura hoy</h1>
+      <div class="form">
+        <form action="procesar.php" method="post" id="newUser">
+          <input type="text" name="email" id="email" title="correo" placeholder="Correo Electrónico" required /><br>
+          <input type="text" name="password" id="password" title="contraseña" placeholder="Contraseña" required />
+          <div class="termLine">
+            <input type="checkbox" name="terms" id="terms" />
+            <p>Acepto las condiciones y términos de servicio</p>
+          </div>
+          <div class="send">
+            <input type="submit" value="Crear cuenta" class="buttons" id="enviar" />
+            <input type="submit" value="Iniciar sesión" class="buttons" id="iniciarsesion" />
+          </div>
+        </form>
       </div>
     </div>
-  </nav>
-  <!-- Animated navbar -->
-  
-  
-  </header>
-  <!--Main Navigation-->
+  </div>
+  <br><br><br>
+  <!-- LOGIN FIN -->
 
-    <!-- LOGIN -->
-    <div class="login">
-        <div class="header">
-            <h1 id="title">Empieza tu aventura hoy</h1>
-            <div class="form">
-                <form action="procesar.php" method="post" id="newUser">
-                    <input type="text" name="nombre" id="email" maxlength="15" pattern="[A-Za-z ]{2,15}" title="correo"
-                        placeholder="Correo Electrónico" required /><br>
-                    <input type="text" name="nombre" id="password" maxlength="15" pattern="[A-Za-z ]{2,15}"
-                        title="correo" placeholder="Contraseña" required />
-                    <div class="termLine">
-                        <input type="checkbox" name="terms" id="terms" />
-                        <p>Acepto las condiciones y términos de servicio</p>
-                    </div>
-                    <div class="send">
-                        <input type="submit" value="Crear cuenta" class="buttons" id="enviar" />
-                        <input type="reset" value="Iniciar sesión" class="buttons" id="iniciarsesion" />
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- LOGIN FIN -->
-    <div class="section1 my-auto" style="background-color: pink;">
-        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
-        <div id="text1">
-            <h4>Tus personajes de Dungeons and Dragons, todos en un mismo lugar</h4>
-            <p>Pocket Hero es un creador de personajes ligero, accesible y de fuente abierta diseñado para el juego de
-                rol Dungeons and Dragons, quinta edición. Guarda tus fichas de personaje y accede a ellas desde
-                cualquier parte.</p>
-        </div>
-    </div>
+  <div class="section1 my-auto" style="background-color: rgb(255, 255, 255);">
 
-    <div class="section2 my-auto" style="background-color: orange;">
-        <div id="text2">
-            <h4>Mantén a tus enemigos cerca y a tus jugadores más</h4>
-            <p>Dirigir una partida nunca ha sido tan fácil. Mejora tu estátus de Jugador
-                a Director y conecta con los miembros de tu campaña y sus personajes en todo
-                momento.
-            </p>
-        </div>
-        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
+    <img src="https://pbs.twimg.com/media/DrBwgBLV4AAR1kE?format=jpg&name=4096x4096" style="height: 400px;">
+    <div id="text1">
+      <h4>Tus personajes de Dungeons and Dragons, todos en un mismo lugar</h4>
+      <p>Pocket Hero es un creador de personajes <span style="color:rgb(68, 176, 77)">ligero, accesible y de fuente abierta</span> diseñado para el juego de
+        rol <i><span style="color:rgb(68, 176, 77); font-weight:400px">Dungeons and Dragons</i></span>, quinta edición. Guarda tus fichas de personaje y accede a ellas desde
+        cualquier parte.</p>
     </div>
+  </div>
+  <hr class="dashed">
+  <div class="section2 my-auto" style="background-color: rgb(255, 255, 255);">
 
-    <div class="section3 my-auto" style="background-color: rgb(240, 180, 180);">
-        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
-        <div id="text3">
-            <h4>Encuentra partidas y descubre nuevos mundos</h4>
-            <p>Si aún no has empezado a jugar, da el primer paso. Encuentra miles de partidas
-                disponibles y únete con los personajes que has creado.
-            </p>
-        </div>
+    <div id="text2">
+      <br>
+      <h4>Mantén a tus enemigos cerca y a tus jugadores más</h4>
+      <p>Dirigir una partida nunca ha sido tan fácil. Mejora tu estátus de <span style="color:rgb(68, 176, 77)">Jugador</span>
+        a <span style="color:rgb(68, 176, 77)">Director </span>y conecta con los miembros de tu campaña y sus personajes en todo
+        momento.
+      </p>
     </div>
-    <div class="section4 my-auto" style="background-color: olivedrab;">
-        <h4 id="text4">Encuéntranos en redes sociales</h4>
-        <div class="buttons">
-            <button type="button" class="btn btn-primary">Discord</button>
-            <button type="button" class="btn btn-primary">Twitter</button>
-            <button type="button" class="btn btn-primary">Twitch</button>
-        </div>
-        <img src="https://i.pinimg.com/originals/5d/d0/4c/5dd04c1c9f73e4dc1759deac17cf42bd.png" style="height: 300px;">
-    </div>
+    <img src="https://pbs.twimg.com/media/Dj7Ms1KW4AEgC56?format=jpg&name=medium" style="height: 400px;">
+  </div>
+  <hr class="dashed">
+  <div class="section3 my-auto" style="background-color: white;">
 
+    <img src="https://pbs.twimg.com/media/FYh9xjeUsAIh67o?format=jpg&name=small" style="height: 700px;">
+    <div id="text3">
+      <h4>Encuentra partidas y descubre nuevos mundos</h4>
+      <p>Si aún no has empezado a jugar, da el primer paso. Encuentra <span style="color:rgb(68, 176, 77)">miles de partidas
+        disponibles</span> y únete con los personajes que has creado.
+      </p>
     </div>
-    <footer>
-        <p>Pocket Hero</p> | <a href="#"> Términos Legales </a> | <a href="#">Política de privacidad</a><br>
-        ©2023-2024. All Rights Reserved.
-        A Coruña, Spain.
-    </footer>
+  </div>
+  <div class="section4 my-auto" style="background-color: white;">
+
+    <h4 id="text4">Encuéntranos en redes sociales</h4>
+    <div class="social">
+      <button type="button"><img src="https://assets.stickpng.com/images/6002f91d51c2ec00048c6c6d.png"
+          width="20px"></button>
+      <button type="button"><img
+          src="https://about.twitter.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png"
+          width="15"></button>
+      <button type="button"><img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Twitch_Glitch_Logo_Black.svg/878px-Twitch_Glitch_Logo_Black.svg.png"
+          width="15"></button>
+    </div>
+    <img src="https://pbs.twimg.com/media/Cxl55nuUcAEA9nx?format=jpg&name=large">
+  </div>
+
+  </div>
+  <footer>
+    <p>Pocket Hero</p> | <a href="#"> Términos Legales </a> | <a href="#">Política de privacidad</a> |<br>
+    ©2023-2024. All Rights Reserved.
+    A Coruña, Spain.
+  </footer>
 
 </body>
 
