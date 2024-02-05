@@ -20,12 +20,26 @@
     }
 
     .login {
+      position: relative;
       padding-top: 5%;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(https://images3.alphacoders.com/131/thumb-1920-1314645.jpg), lightgray 50% / cover no-repeat;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
       height: 900px;
+      overflow: hidden;
     }
 
+    #video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      z-index: -1;
+    }
+    
     .form {
+      position: relative; 
+      z-index: 1; 
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -255,19 +269,27 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding-top: 3%;
+      padding-top: 7%;
       height: 100%;
-      padding-bottom: 4%;
+      padding-bottom: 2%;
       flex-shrink: 0;
-      color: #FFF;
+      color: #ffffff;
       text-align: center;
-      text-shadow: 0px 10.439px 10.439px rgba(0, 0, 0, 0.25), 0px 6.153px 6.153px rgba(0, 0, 0, 0.25);
+      text-shadow: 0px 10.439px 10.439px rgba(0, 0, 0, 0.50), 0px 6.153px 6.153px rgba(0, 0, 0, 0.25);      
+      text-shadow:
+      -3px -3px 0 #000,
+      3px -3px 0 #000,
+      -3px 3px 0 #000,
+      4px 3px #000;
       font-family: Draconis;
-      font-size: 130px;
+      font-size: 150px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
     }
+
+
+    
 
     #text4 {
       text-align: center;
@@ -392,8 +414,6 @@
         -1px 1px 0 #000,
         1px 1px #000;
     }
-
-
 
     .navbar-scrolled .nav-link,
     .navbar-scrolled .navbar-toggler-icon {
@@ -533,8 +553,7 @@
               <a class="nav-link" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" rel="nofollow"
-                target="_blank">Buscar partida</a>
+              <a class="nav-link" href="" rel="nofollow" target="_blank">Buscar partida</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="" target="_blank">Nosotros</a>
@@ -544,7 +563,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./login.html" target="_blank">Mi Perfil</a>
-              
+
             </li>
           </ul>
 
@@ -571,12 +590,17 @@
 
 
   <div class="login">
+    <video autoplay muted loop id="video-background">
+      <source src="https://cdn.artstation.com/p/video_sources/001/285/262/throneroom1.mp4" type="video/mp4">
+    </video>
     <div class="header">
       <h1 id="title">Empieza tu aventura hoy</h1>
       <div class="form">
+         
         <form action="procesar.php" method="post" id="newUser">
           <input type="text" name="email" id="email" title="correo" placeholder="Correo Electrónico" required /><br>
           <input type="text" name="password" id="password" title="contraseña" placeholder="Contraseña" required />
+
           <div class="termLine">
             <input type="checkbox" name="terms" id="terms" />
             <p>Acepto las condiciones y términos de servicio</p>
@@ -633,8 +657,8 @@
 
     <h4 id="text4">Encuéntranos en redes sociales</h4>
     <div class="social">
-      <button type="button"><img src="https://assets.stickpng.com/images/6002f91d51c2ec00048c6c6d.png"
-          width="20px"></button>
+      <button type="button"><img src="https://static-00.iconduck.com/assets.00/discord-icon-512x444-gicjsabr.png"
+          width="40px"></button>
       <button type="button"><img
           src="https://about.twitter.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png"
           width="15"></button>
