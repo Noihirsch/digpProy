@@ -24,7 +24,7 @@
     .login {
       position: relative;
       padding-top: 5%;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.40) 100%);
       height: 900px;
       overflow: hidden;
     }
@@ -71,38 +71,48 @@
       margin: -50px auto 10px;
     }
 
+    .termLine {
+      display: flex;
+      align-items: center; 
+      text-align: start;
+      margin-top: 10px; 
+    }
+    
+    
+    #enviar:hover 
+    {
+        background-color: #1e8551;
+        color: #161c17;
+    }
+
+    #iniciarsesion:hover
+    {
+        background-color:rgb(203, 203, 203);
+    }
+
+    
     .termLine p {
       display: flex;
       text-align: start;
       color: white;
-      font-family: Kelly Slab;
+      font-family: 'Kelly Slab';
       font-size: 20px;
+      margin-left: 10px; 
     }
-
-    #terms {
-      transform: scale(0.8);
-      transform: scale(0.5);
-      align-items: left;
-      border: 3px;
-    }
-
-    #term p {
-      color: white;
-      font-style: Archivo Narrow;
-    }
-
+    
     #terms {
       appearance: none;
       -moz-appearance: none;
-      width: 50px;
-      height: 50px;
+      width: 20px; 
+      height: 20px; 
       background-color: #ffffff;
       border: 3px solid #000000;
       border-radius: 4px;
       cursor: pointer;
       outline: none;
-      margin-right: 5px;
+      margin-right: 10px; 
     }
+
 
     #text1 {
       margin: 10px;
@@ -300,6 +310,19 @@
     }
 
 
+    #email:focus,
+    #email:hover,
+    #password:focus,
+    #password:hover {
+        transition: transform 0.3s ease-in-out;
+        outline: none;
+
+    }
+    
+    #email:hover, #password:hover{
+        transform: scale(1.1);
+    }
+    
 
     #enviar {
       width: 200px;
@@ -364,19 +387,19 @@
 
 
     footer {
-      height: 40%;
       flex-shrink: 0;
       color: #FFF;
       text-align: center;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       font-family: Kelly Slab;
-      font-size: 18px;
+      font-size: 14px;
       font-style: normal;
-      line-height: 2.5em;
+      line-height: 2em;
       background-color: black;
+      padding-top: 2%;
+      padding-bottom: 2%;
       text-decoration: none;
-      padding-top: 30px;
-      padding-bottom: 30px;
+
     }
 
     footer a {
@@ -398,6 +421,8 @@
 
     .navbar-scroll .nav-link,
     .navbar-scroll .navbar-toggler-icon {
+
+      
       color: #FFF;
       text-align: center;
       font-family: "Kelly Slab";
@@ -410,6 +435,8 @@
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px #000;
+
+        
     }
 
     .navbar-scrolled .nav-link,
@@ -417,9 +444,23 @@
       color: #ffffff;
     }
 
+    .navbar-scroll {
+      backdrop-filter: blur(2px);
+      background-color: rgba(0, 0, 0, 0.5); 
+    }
+    
+    .navbar-scroll.navbar-scrolled {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    
+
 
     .navbar-scrolled {
-      background-color: #ffffff;
+      .navbar {
+        backdrop-filter: blur(10px); 
+        background-color: rgba(0, 0, 0, 0.7); 
+      }
     }
 
     .navbar.navbar-scroll.navbar-scrolled {
@@ -531,11 +572,10 @@
 <body>
 
   <header>
-
-    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top navbar-scroll">
       <div class="container-fluid">
         <div class="logo">
-          <a href="https://imgur.com/FKBJePn"><img src="https://i.imgur.com/FKBJePn.png" />Pocket Hero</a>
+          <a href="https://imgur.com/gallery/1z84O0B"><img src="https://i.imgur.com/rLSeOTY.png" />Pocket Hero</a>
         </div>
         <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
           aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -543,7 +583,7 @@
             <i class="fas fa-bars"></i>
           </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
+        <div class="collapse navbar-collapse" id="navbarPocketHero">
           <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
 
             <li class="nav-item active">
@@ -575,17 +615,12 @@
 
             </li>
             <li class="nav-item">
-
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-
   </header>
-
-
   <div class="login">
     <video autoplay muted loop id="video-background">
       <source src="https://cdn.artstation.com/p/video_sources/001/285/262/throneroom1.mp4" type="video/mp4">
@@ -668,9 +703,9 @@
 
   </div>
   <footer>
-    <p>Pocket Hero</p> | <a href="#"> Términos Legales </a> | <a href="#">Política de privacidad</a> |<br>
-    ©2023-2024. All Rights Reserved.
-    A Coruña, Spain.
+    <p style="font-size:18px;">Pocket Hero</p> | <a href="#"> Términos Legales </a> | <a href="#">Política de privacidad</a> |<br>
+    ©2023-2024. Todos los derechos reservados.
+    A Coruña, España.
   </footer>
 
   <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
