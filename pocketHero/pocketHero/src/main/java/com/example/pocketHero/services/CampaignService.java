@@ -6,17 +6,17 @@ import com.example.pocketHero.domains.Campaign;
 
 
 public interface CampaignService {
+    
+    List <Campaign> findAll();
 
     Campaign create(Campaign campaign);
-
-    List <Campaign> findAllCampaigns();
+    
+    Campaign edit(Campaign campaign);
 
     Campaign findById(Long id);
 
     Campaign findByName (String name);
 
-    Campaign edit(Campaign campaign);
-
-    List <Campaign> findByCampaign(Long campaign_id);
+    List <Campaign> findByCampaignId(Long campaign_id);
  
 }

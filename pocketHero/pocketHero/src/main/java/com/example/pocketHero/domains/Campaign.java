@@ -40,9 +40,13 @@ public class Campaign {
 
 
     @ManyToOne
-    @JoinColumn (foreignKey = @ForeignKey(name="ID"))
+    @JoinColumn (foreignKey = @ForeignKey(name="DM_ID"))
     @OnDelete (action = OnDeleteAction.CASCADE)
     private Player dm;
+
+    @JoinColumn (foreignKey = @ForeignKey(name="ID"))
+    @OnDelete (action = OnDeleteAction.CASCADE)
+    private List <Player> listOfPlayers = new ArrayList<>();
   
 
 

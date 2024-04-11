@@ -31,18 +31,18 @@ public class Character {
     @Column(name="hp")
     private int hp;
 
-    @NotEmpty
-    @Column(name="stats")
-    private String stats;
-
+1   @NotEmpty
+    @Column(name="CharacterStat")
+    private CharacterStat CharacterStat;
+    
     @Column(name="race")
-     private String race;
+     private Race race;
 
     @Column(name="archetype")
-    private String archetype;
+    private Archetype archetype;
 
     @Column(name="background")
-    private String background;
+    private Background background;
 
 
 }

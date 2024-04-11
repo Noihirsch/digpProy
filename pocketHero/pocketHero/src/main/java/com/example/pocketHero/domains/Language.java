@@ -1,40 +1,41 @@
 package com.example.pocketHero.domains;
-
 import java.time.LocalDate;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
-@Entity
+@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of="id")
+@Entity
 
-public class CampaignReg {
 
+public class Language {
+    
     @Id
     @GeneratedValue
-    private Long id;
+    @Column(name="player_id")
+    private Long languageId;
 
-    @DateTimeFormat
-    private LocalDate startedIn;
+    @NotEmpty
+    private String name;
 
-    @DateTimeFormat
-    private LocalDate endedIn;
-    
+    @NotEmpty
+    private String description;
+
+
+
+
 }

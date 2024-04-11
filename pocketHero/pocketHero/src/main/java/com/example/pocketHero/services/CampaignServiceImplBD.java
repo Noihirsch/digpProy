@@ -27,6 +27,7 @@ public class CampaignServiceImplBD implements CampaignService{
 
     @Override
     public List<Campaign> findAllCampaigns() {
+        
         return campaignRepository.findAll();
     }
 
@@ -46,10 +47,5 @@ public class CampaignServiceImplBD implements CampaignService{
 
     }
 
-    @Override
-    public List<Campaign> findByCampaign(Long campaign_id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByCampaign'");
-    }
 
 }

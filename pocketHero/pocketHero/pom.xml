@@ -63,7 +63,12 @@
 		<dependency>
    			<groupId>jakarta.validation</groupId>
     		<artifactId>jakarta.validation-api</artifactId>
-    		<version>3.1.0-M1</version>
+    		<version>3.1.0-M1</version>		
+		</dependency>
+		<dependency>
+			<groupId>io.supabase</groupId>
+			<artifactId>postgrest-java</artifactId>
+			<version>0.1.0</version>
 		</dependency>
 	</dependencies>
 	<build>
