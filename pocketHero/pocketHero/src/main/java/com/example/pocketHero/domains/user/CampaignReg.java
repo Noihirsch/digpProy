@@ -1,19 +1,14 @@
-package com.example.pocketHero.domains;
+package com.example.pocketHero.domains.user;
 
 import java.time.LocalDate;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotEmpty;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +25,14 @@ public class CampaignReg {
     @Id
     @GeneratedValue
     private Long id;
+
+    @NotEmpty
+    @ManyToOne
+    private Campaign campaign;
+
+    @NotEmpty
+    @ManyToOne 
+    private Player player;
 
     @DateTimeFormat
     private LocalDate startedIn;

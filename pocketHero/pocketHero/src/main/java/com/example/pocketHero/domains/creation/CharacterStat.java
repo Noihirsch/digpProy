@@ -1,17 +1,12 @@
-package com.example.pocketHero.domains;
-import java.time.LocalDate;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import jakarta.persistence.Column;
+package com.example.pocketHero.domains.creation;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -33,11 +28,3 @@ public class CharacterStat {
     private int value;
 }
 
-public enum StatType {
-    STRENGTH,
-    DEXTERITY,
-    CONSTITUTION,
-    INTELLIGENCE,
-    WISDOM,
-    CHARISMA
-}

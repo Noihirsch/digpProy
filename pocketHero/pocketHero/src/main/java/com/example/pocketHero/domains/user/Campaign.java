@@ -1,13 +1,19 @@
-package com.example.pocketHero.domains;
+package com.example.pocketHero.domains.user;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -44,7 +50,12 @@ public class Campaign {
     @OnDelete (action = OnDeleteAction.CASCADE)
     private Player dm;
 
-    @JoinColumn (foreignKey = @ForeignKey(name="ID"))
+    @OneToMany
+    @JoinTable(
+        name = "campaign_players",
+        joinColumns = @JoinColumn(name = "campaign_id"),
+        inverseJoinColumns = @JoinColumn(name = "player_id"))
+    @JoinColumn (foreignKey = @ForeignKey(name="PLAYER_ID"))
     @OnDelete (action = OnDeleteAction.CASCADE)
     private List <Player> listOfPlayers = new ArrayList<>();
   
