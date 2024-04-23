@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -20,27 +21,24 @@ public class Archetype {
     @GeneratedValue
     private Long id;
 
-    @Column(name="name")
     @NotNull
     private String name;
 
     @NotNull
-    @Column(name="description")
     private String description;
 
     @NotNull
-    @Column(name="hit_die")
     private HitDie hitdie;
 
     @NotNull
-    @Column(name="proficiencies")
     @OneToMany
-    private List<Proficiency> proficiencies;
+    private List<Trait> archetypeTraits;
 
     @NotNull
-    @Column(name="inventory")
     @OneToMany
     private List<Gear> inventory;
 
+    @OneToMany
+    private List<Personaje> allMyPersonajes;
 
 }
