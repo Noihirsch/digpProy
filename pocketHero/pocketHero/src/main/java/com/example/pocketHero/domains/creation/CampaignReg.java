@@ -1,4 +1,4 @@
-package com.example.pocketHero.domains.user;
+package com.example.pocketHero.domains.creation;
 
 import java.time.LocalDate;
 

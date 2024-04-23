@@ -1,4 +1,4 @@
-package com.example.pocketHero.domains.user;
+package com.example.pocketHero.domains.creation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +57,7 @@ public class Campaign {
         inverseJoinColumns = @JoinColumn(name = "player_id"))
     @JoinColumn (foreignKey = @ForeignKey(name="PLAYER_ID"))
     @OnDelete (action = OnDeleteAction.CASCADE)
-    private List <Player> listOfPlayers = new ArrayList<>();
+    private List <Personaje> listOfPersonajes = new ArrayList<>();
   
 
 

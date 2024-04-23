@@ -13,22 +13,18 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Character {
+public class Personaje {
     @Id
     @GeneratedValue
-    @Column(name="character_id")
     private Long id;
 
     @NotNull
-    @Column(name="name")
     private String name;
 
     @Min(0)
-    @Column(name="hp")
     private int hp;
 
     @OneToOne

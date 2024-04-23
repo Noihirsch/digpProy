@@ -1,10 +1,11 @@
 package com.example.pocketHero.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.pocketHero.domains.user.Campaign;
 
-public interface CharacterRepository extends JpaRepository<Campaign, Long> {
+import com.example.pocketHero.domains.creation.Campaign;
 
-    Character findByName(String name);
+public interface CharacterRepository extends JpaRepository<Character, Long> {
+
+    public Character findByName(String name);
 }
 

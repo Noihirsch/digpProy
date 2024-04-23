@@ -1,31 +1,35 @@
 package com.example.pocketHero.domains.creation;
+
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-
+@Entity
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
-@Entity
-public class CharacterStat {
+public class CharacterReg {
     @Id
     @GeneratedValue
     private Long id;
 
-    @ManyToOne
+    @OneToOne
     private Personaje personaje;
 
-    @Enumerated(EnumType.STRING)
-    private StatType statType;
+    @DateTimeFormat
+    private LocalDate createdIn;
 
-    private int value;
+    @DateTimeFormat
+    private LocalDate joinedIn;
+
+
+    
 }
-

@@ -1,10 +1,22 @@
 package com.example.pocketHero.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-import com.example.pocketHero.domains.user.Player;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.pocketHero.domains.creation.Player;
 public interface PlayerRepository extends JpaRepository <Player, Long> {
 
     public Player findByUsername(String username);
 
+    @Query("SELECT p FROM Player p WHERE p.isDM = true")
+    List<Player> findPlayersWhoAreDM();
+
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM Player p WHERE p.username = ?1")
+    void deleteByUsername(String username);
 }
