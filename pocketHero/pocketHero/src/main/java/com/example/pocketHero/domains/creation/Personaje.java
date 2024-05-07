@@ -53,4 +53,7 @@ public class Personaje {
     @OneToMany(mappedBy = "languageId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Language> allMyLanguages;
 
+    @OneToOne
+    private Player player;
+
 }

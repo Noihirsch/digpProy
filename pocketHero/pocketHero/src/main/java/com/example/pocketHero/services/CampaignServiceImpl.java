@@ -41,7 +41,7 @@ public class CampaignServiceImpl implements CampaignService {
     }
 
 
-    @Override<
+    @Override
     public Campaign getCampaignByCharacter(Personaje character) {
         return campaignRepository.getCampaignByPersonajes(character);
     }

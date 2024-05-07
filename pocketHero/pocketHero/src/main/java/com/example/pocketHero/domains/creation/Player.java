@@ -43,6 +43,9 @@ public class Player {
     @JoinColumn(name = "player_id")
     private List<Campaign> campaignsDMed = new ArrayList<>();
 
+    @OneToMany
+    @JoinColumn(name = "player_id")
+    private List<Personaje> personajes = new ArrayList<>();
     
 
 }
