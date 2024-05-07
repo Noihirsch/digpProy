@@ -44,23 +44,13 @@ public class Campaign {
     @Column(name="description")
     private String description;
 
+    @OneToMany(mappedBy = "campaign")
+    private List<Personaje> personajes;
 
     @ManyToOne
     @JoinColumn (foreignKey = @ForeignKey(name="DM_ID"))
     @OnDelete (action = OnDeleteAction.CASCADE)
-    private Player dm;
-
-    @OneToMany
-    @JoinTable(
-        name = "campaign_players",
-        joinColumns = @JoinColumn(name = "campaign_id"),
-        inverseJoinColumns = @JoinColumn(name = "player_id"))
-    @JoinColumn (foreignKey = @ForeignKey(name="PLAYER_ID"))
-    @OnDelete (action = OnDeleteAction.CASCADE)
-    private List <Personaje> listOfPersonajes = new ArrayList<>();
-  
-
-
+    private Player player;
 
 
 

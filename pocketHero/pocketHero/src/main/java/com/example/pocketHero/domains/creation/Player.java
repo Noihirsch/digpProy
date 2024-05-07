@@ -9,6 +9,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -35,13 +36,13 @@ public class Player {
     
     @NotEmpty
     private String password; 
-    
-    // @Column(columnDefinition = "DATE")
-    // private LocalDate signupDate;
 
     private boolean isDM;
 
-    @OneToMany(mappedBy = "dm", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Campaign> campaigns = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "player_id")
+    private List<Campaign> campaignsDMed = new ArrayList<>();
+
+    
 
 }
