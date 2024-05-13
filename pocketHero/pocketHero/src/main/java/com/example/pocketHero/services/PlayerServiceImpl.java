@@ -40,11 +40,6 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void deletePlayerById(Long id) {
-        playerRepository.deleteById(id);
-    }
-
-    @Override
     public void deletePlayerByUsername(String username) {
         playerRepository.deleteByUsername(username);
     }
@@ -52,16 +47,6 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public void updatePlayer(Player player) {
         playerRepository.save(player);
-    }
-
-    @Override
-    public void updateAllPlayers(List<Player> players) {
-        playerRepository.saveAll(players);
-    }
-
-    @Override
-    public void deleteAllPlayers(List<Player> players) {
-        playerRepository.deleteAll(players);
     }
 
 }

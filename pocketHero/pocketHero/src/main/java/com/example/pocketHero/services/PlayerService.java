@@ -17,15 +17,10 @@ public interface PlayerService {
 
     public void deletePlayer(Player player);
 
-    public void deletePlayerById(Long id);
-
     public void deletePlayerByUsername(String username);
 
     public void updatePlayer(Player player);
-
-    public void updateAllPlayers(List<Player> players);
     
-    public void deleteAllPlayers(List<Player> players);
 
     
     
