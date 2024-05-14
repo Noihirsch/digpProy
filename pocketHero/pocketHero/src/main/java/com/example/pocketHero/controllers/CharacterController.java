@@ -10,13 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.pocketHero.domains.creation.Campaign;
 import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
-import com.example.pocketHero.services.CampaignService;
 import com.example.pocketHero.services.PersonajeService;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -57,9 +53,9 @@ public class CharacterController {
         return new ResponseEntity<>(personajeService.updatePersonaje(personaje), HttpStatus.OK);
     }
 
-    @GetMapping("/{dm}")
+    @GetMapping("/{player}")
     public ResponseEntity<?> getCharacterByPlayer(@PathVariable Player player) {
-        return new ResponseEntity<>(personajeService.getCharacterByPlayer(player), HttpStatus.OK);
+        return new ResponseEntity<>(personajeService.getPersonajeByPlayer(player), HttpStatus.OK);
     }
 
 

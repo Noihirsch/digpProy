@@ -47,4 +47,10 @@ public class PersonajeServiceImpl implements PersonajeService{
     public Personaje getPersonajeByPlayer(Player player) {
         return personajeRepository.getPersonajeByPlayer(player);
     }
+
+    @Override
+    public Object getCharacterByPlayer(Player player) {
+        return personajeRepository.getPersonajeByPlayer(player);
+    
+    }
 }
