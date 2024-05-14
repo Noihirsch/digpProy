@@ -24,6 +24,8 @@ public interface PersonajeService {
 
     public Personaje getPersonajeByPlayer(Player player);
 
+    public Object getCharacterByPlayer(Player player);
+
 
 
     
