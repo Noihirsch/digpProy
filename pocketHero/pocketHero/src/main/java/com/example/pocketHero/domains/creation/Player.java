@@ -38,11 +38,11 @@ public class Player {
 
     @OneToMany
     @JoinColumn(name = "player_id")
-    private List<Campaign> campaignsDMed = new ArrayList<>();
+    private List<Campaign> allMyCampaigns = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "player_id")
-    private List<Personaje> personajes = new ArrayList<>();
+    private List<Personaje> allMyPersonajes = new ArrayList<>();
     
 
 }

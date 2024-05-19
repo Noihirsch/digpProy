@@ -39,5 +39,5 @@ public class CampaignReg {
 
     @DateTimeFormat
     private LocalDate endedIn;
-    
+      
 }

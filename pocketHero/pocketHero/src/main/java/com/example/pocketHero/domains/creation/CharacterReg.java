@@ -27,9 +27,5 @@ public class CharacterReg {
     @DateTimeFormat
     private LocalDate createdIn;
 
-    @DateTimeFormat
-    private LocalDate joinedIn;
-
-
     
 }
