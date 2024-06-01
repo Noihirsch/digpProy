@@ -1,5 +1,4 @@
 package com.example.pocketHero.controllers;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.pocketHero.domains.creation.Player;
 import com.example.pocketHero.services.PlayerService;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
-@Tag(name = "PLAYER", description = "Obtain all the data related to the players that are registered on the app")
+@Tag(name = "Player", description = "Obtain all the data related to the players that are registered on the app")
 @RestController
 @RequestMapping("/player")
 public class PlayerController {
@@ -32,7 +30,7 @@ public class PlayerController {
         return new ResponseEntity<>(playerService.findAllPlayers(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     @Operation(summary = "Get player", description = "Gets a player by their ID")
     @Parameter(name = "id", description = "Player id", example = "1", required = true)
     public ResponseEntity<?> getPlayerById(@Valid @PathVariable Long id) {
@@ -45,8 +43,8 @@ public class PlayerController {
         return new ResponseEntity<>(playerService.findPlayersWhoAreDM(), HttpStatus.OK);
     }
     
-    @GetMapping("/{username}")
-    @Parameter(name = "username", description = "Player username", example = "1", required = true)
+    @GetMapping("username/{username}")
+    @Parameter(name = "username", description = "Player username", example = "usuario", required = true)
     @Operation(summary = "Get by username", description = "Get a player by username")
     public ResponseEntity<?> getPlayerByUsername(@PathVariable String username) {
         return new ResponseEntity<>(playerService.findPlayerByUsername(username), HttpStatus.OK);
@@ -58,7 +56,7 @@ public class PlayerController {
         return new ResponseEntity<>(playerService.createPlayer(player), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("id/{id}")
     @Parameter(name = "id", description = "Player id", example = "1", required = true)
     @Operation(summary = "Delete player by id", description = "Deletes a player by their id")
     public ResponseEntity<?> deletePlayerById(@PathVariable Long id) {
@@ -73,4 +71,4 @@ public class PlayerController {
         playerService.updatePlayer(player);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-}
+} 
