@@ -4,10 +4,14 @@ import java.util.List;
 
 import com.example.pocketHero.domains.creation.Player;
 
+import jakarta.validation.Valid;
+
 
 public interface PlayerService {
 
     public List<Player> findAllPlayers();
+
+    public Player findPlayerById(Long id);
 
     public List<Player> findPlayersWhoAreDM();
 
@@ -20,7 +24,9 @@ public interface PlayerService {
     public void deletePlayerByUsername(String username);
 
     public void updatePlayer(Player player);
-    
+
+    public void deletePlayerById(Long id);
+
 
     
     

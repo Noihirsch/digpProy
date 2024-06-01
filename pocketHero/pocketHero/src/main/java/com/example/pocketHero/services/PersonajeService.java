@@ -6,6 +6,8 @@ import com.example.pocketHero.domains.creation.Campaign;
 import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
 
+import jakarta.validation.Valid;
+
 public interface PersonajeService {
 
     public List<Personaje> getAllPersonajes();
@@ -26,7 +28,7 @@ public interface PersonajeService {
 
     public Object getCharacterByPlayer(Player player);
 
-
+    public void deletePersonajeById(Long id);
 
     
 }

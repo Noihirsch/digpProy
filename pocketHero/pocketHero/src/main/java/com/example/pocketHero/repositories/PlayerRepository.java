@@ -19,4 +19,6 @@ public interface PlayerRepository extends JpaRepository <Player, Long> {
     @Modifying
     @Query("DELETE FROM Player p WHERE p.username = ?1")
     void deleteByUsername(String username);
+
+    
 }

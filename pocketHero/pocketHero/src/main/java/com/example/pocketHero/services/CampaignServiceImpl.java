@@ -46,10 +46,15 @@ public class CampaignServiceImpl implements CampaignService {
         return campaignRepository.getCampaignByPersonajes(character);
     }
 
+    @Override
     public Campaign getCampaignByPlayer(Player player) {
         return campaignRepository.findByPlayer(player);
     }
 
+    @Override
+    public Object updateCampaignById(Campaign campaign) {
+        return campaignRepository.save(campaign);
+    }
 
 
 

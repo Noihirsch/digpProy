@@ -10,6 +10,8 @@ import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
 import com.example.pocketHero.repositories.PersonajeRepository;
 
+import jakarta.validation.Valid;
+
 @Service
 public class PersonajeServiceImpl implements PersonajeService{
 
@@ -53,4 +55,12 @@ public class PersonajeServiceImpl implements PersonajeService{
         return personajeRepository.getPersonajeByPlayer(player);
     
     }
+
+    @Override
+    public void deletePersonajeById(Long id) {
+        personajeRepository.deleteById(id);
+    }
+
+
+
 }
