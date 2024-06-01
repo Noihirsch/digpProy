@@ -9,5 +9,4 @@ public class PocketHeroApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PocketHeroApplication.class, args);
 	}
-
 }
