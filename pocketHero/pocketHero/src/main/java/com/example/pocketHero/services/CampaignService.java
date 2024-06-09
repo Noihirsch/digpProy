@@ -1,12 +1,10 @@
 package com.example.pocketHero.services;
-
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.example.pocketHero.domains.creation.Campaign;
 import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
+
+import jakarta.validation.Valid;
 
 
 public interface CampaignService {
@@ -26,6 +24,8 @@ public interface CampaignService {
     public Campaign getCampaignByCharacter(Personaje personaje);
 
     public Campaign getCampaignByPlayer(Player player);
+
+    public Object updateCampaignById(@Valid Campaign campaign);
 
 
     

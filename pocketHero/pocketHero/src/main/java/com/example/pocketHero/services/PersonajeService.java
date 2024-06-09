@@ -1,10 +1,14 @@
 package com.example.pocketHero.services;
 
 import java.util.List;
+import java.util.Set;
 
 import com.example.pocketHero.domains.creation.Campaign;
+import com.example.pocketHero.domains.creation.Language;
 import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
+
+import jakarta.validation.Valid;
 
 public interface PersonajeService {
 
@@ -24,9 +28,15 @@ public interface PersonajeService {
 
     public Personaje getPersonajeByPlayer(Player player);
 
-    public Object getCharacterByPlayer(Player player);
+    public void deletePersonajeById(Long id);
 
+    public void addLanguage(Language language);
 
+    public void removeLanguage(Language language);
+
+    public void setAllMyLanguages(Set<Language> allMyLanguages);
+
+    public Set<Language> getAllMyLanguages();
 
     
 }
