@@ -9,12 +9,17 @@ import com.example.pocketHero.domains.creation.Campaign;
 import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
 import com.example.pocketHero.repositories.CampaignRepository;
+import com.example.pocketHero.repositories.PersonajeRepository;
+import com.example.pocketHero.repositories.PlayerRepository;
 
 @Service
 public class CampaignServiceImpl implements CampaignService {
 
     @Autowired
     public CampaignRepository campaignRepository;
+
+    @Autowired
+    public PersonajeRepository personajeRepository;
 
     public List<Campaign> getAllCampaigns() {
         return campaignRepository.findAll();
@@ -39,7 +44,6 @@ public class CampaignServiceImpl implements CampaignService {
     public Campaign getCampaignByName(String name) {
         return campaignRepository.findByName(name);
     }
-
 
     @Override
     public Campaign getCampaignByCharacter(Personaje character) {

@@ -3,6 +3,7 @@ package com.example.pocketHero.domains.creation;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,16 +29,19 @@ public class Player {
     private Long id;
 
     @NotEmpty
+    @Column(unique = true)
     private String username;
 
+
     @NotEmpty
+    @Column(unique = true)
     @Email
     private String email;
     
     @NotEmpty
     private String password; 
 
-    private boolean isDM;
+    private Rol rol;
 
     @OneToMany
     @JoinColumn(name = "player_id")
@@ -48,4 +52,9 @@ public class Player {
     private List<Personaje> allMyPersonajes = new ArrayList<>();
     
 
+    public Player(String username, String email, String password, boolean isDM) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 }

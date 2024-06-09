@@ -13,8 +13,6 @@ public interface PlayerService {
 
     public Player findPlayerById(Long id);
 
-    public List<Player> findPlayersWhoAreDM();
-
     public Player createPlayer(Player player);
 
     public Player findPlayerByUsername(String username);

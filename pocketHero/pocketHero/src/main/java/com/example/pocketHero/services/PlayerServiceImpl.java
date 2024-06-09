@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.example.pocketHero.domains.creation.Player;
 import com.example.pocketHero.repositories.PlayerRepository;
 
-import jakarta.validation.Valid;
-
 @Service
 public class PlayerServiceImpl implements PlayerService {
 
@@ -20,12 +18,7 @@ public class PlayerServiceImpl implements PlayerService {
     public List<Player> findAllPlayers() {
         return playerRepository.findAll();
     }
-
-    @Override
-    public List<Player> findPlayersWhoAreDM(){
-        return playerRepository.findPlayersWhoAreDM();
-    }
-
+    
     @Override
     public Player createPlayer(Player player) {
         return playerRepository.save(player);

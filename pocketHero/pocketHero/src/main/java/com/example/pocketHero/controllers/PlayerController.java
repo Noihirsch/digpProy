@@ -36,12 +36,6 @@ public class PlayerController {
     public ResponseEntity<?> getPlayerById(@Valid @PathVariable Long id) {
         return new ResponseEntity<>(playerService.findPlayerById(id), HttpStatus.OK);
     }
-
-    @GetMapping("/whoIsDM")
-    @Operation(summary = "Get Dungeon Masters", description = "Get players who are dungeon masters")
-    public ResponseEntity<?> getPlayersWhoAreDM() {
-        return new ResponseEntity<>(playerService.findPlayersWhoAreDM(), HttpStatus.OK);
-    }
     
     @GetMapping("username/{username}")
     @Parameter(name = "username", description = "Player username", example = "usuario", required = true)

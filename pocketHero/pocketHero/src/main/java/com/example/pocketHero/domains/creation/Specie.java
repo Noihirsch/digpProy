@@ -5,16 +5,24 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @Entity
-public class Race {
+@NoArgsConstructor
+
+public class Specie {
 
     @Id
     @GeneratedValue
@@ -30,12 +38,14 @@ public class Race {
     @NotNull
     private Long speed;
 
-    @NotNull
-    private String size;
+    @ManyToMany
+    @JoinTable(
+      name = "specie_language",
+      joinColumns = @JoinColumn(name = "specie_id"),
+      inverseJoinColumns = @JoinColumn(name = "language_id")
+    )
+    private Set<Language> languages = new HashSet<>();
 
-    @OneToMany(mappedBy = "languageId", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Language> language;
-
-    @OneToMany  // or @OneToMany, depending on your relationship
+    @OneToMany  
     private List<Trait> traits;
 }
