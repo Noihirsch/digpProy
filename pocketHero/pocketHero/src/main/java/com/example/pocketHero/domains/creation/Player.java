@@ -3,6 +3,8 @@ package com.example.pocketHero.domains.creation;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,10 +46,12 @@ public class Player {
     private Rol rol;
 
     @OneToMany
+    @JsonIgnore
     @JoinColumn(name = "player_id")
     private List<Campaign> allMyCampaigns = new ArrayList<>();
 
     @OneToMany
+    @JsonIgnore
     @JoinColumn(name = "player_id")
     private List<Personaje> allMyPersonajes = new ArrayList<>();
     

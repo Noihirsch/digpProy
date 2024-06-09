@@ -12,15 +12,21 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 
 public class Specie {
 
@@ -47,5 +53,10 @@ public class Specie {
     private Set<Language> languages = new HashSet<>();
 
     @OneToMany  
+    @JsonIgnore
     private List<Trait> traits;
+    
+    private HitDie hitDie;
+
+
 }

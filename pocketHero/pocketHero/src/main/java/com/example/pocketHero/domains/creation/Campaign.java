@@ -4,6 +4,8 @@ import java.util.List;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,6 +45,7 @@ public class Campaign {
     private String description;
 
     @OneToMany(mappedBy = "campaign")
+    @JsonIgnore
     private List<Personaje> personajes;
 
     @ManyToOne

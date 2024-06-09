@@ -6,6 +6,8 @@ import java.util.Set;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -30,13 +32,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
 @Data
 @Getter
-@Setter
-@AllArgsConstructor
 @NoArgsConstructor
-
 public class Personaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,11 +46,11 @@ public class Personaje {
     private String name;
 
     @Min(0)
-    @NotNull
     private int hp;
 
+    private int level;
+
     @Max(1)
-    @NotNull
     private HitDie hitDie;
 
     @OneToOne(mappedBy = "personaje")
@@ -71,4 +71,37 @@ public class Personaje {
 
     @ManyToOne
     private Player player;
+
+    @OneToMany
+    @JsonIgnore
+    private List<Spell> spells;
+
+    @OneToMany
+    @JsonIgnore
+    private List<Weapon> weapons;
+
+    public void calculateHp() {
+        int averageHitDieValue = this.race.getHitDie().getValue();
+        this.hp = averageHitDieValue;
+
 }
+
+public Personaje(Long id, String name, int level, HitDie hitDie, CharacterStat characterStat, Specie specie, Archetype archetype, Backstory backstory, Player player, List<Spell> spells, List<Weapon> weapons) {
+    this.id = id;
+    this.name = name;
+    this.level = level;
+    this.hitDie = hitDie;
+    this.characterStat = characterStat;
+    this.race = specie;
+    this.archetype = archetype;
+    this.backstory = backstory;
+    this.player = player;
+    this.spells = spells;
+    this.weapons = weapons;
+
+}
+
+}
+
+
+

@@ -2,6 +2,8 @@ package com.example.pocketHero.domains.creation;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,6 +42,7 @@ public class Archetype {
 
     @NotNull
     @OneToMany
+    @JsonIgnore
     private List<Trait> archetypeTraits;
 
     @NotNull
@@ -47,6 +50,7 @@ public class Archetype {
     private List<Gear> inventory;
 
     @OneToMany
+    @JsonIgnore
     private List<Personaje> allMyPersonajes;
 
 }
