@@ -5,3 +5,5 @@ public class AuthorizationException extends RuntimeException{
         super("You don't have permission to see this");
     
 }
+
+}

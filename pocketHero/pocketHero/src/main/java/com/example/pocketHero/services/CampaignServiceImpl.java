@@ -10,7 +10,6 @@ import com.example.pocketHero.domains.creation.Personaje;
 import com.example.pocketHero.domains.creation.Player;
 import com.example.pocketHero.repositories.CampaignRepository;
 import com.example.pocketHero.repositories.PersonajeRepository;
-import com.example.pocketHero.repositories.PlayerRepository;
 
 @Service
 public class CampaignServiceImpl implements CampaignService {

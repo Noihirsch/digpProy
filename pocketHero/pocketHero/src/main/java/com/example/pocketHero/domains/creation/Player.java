@@ -34,7 +34,6 @@ public class Player {
     @Column(unique = true)
     private String username;
 
-
     @NotEmpty
     @Column(unique = true)
     @Email
@@ -56,9 +55,10 @@ public class Player {
     private List<Personaje> allMyPersonajes = new ArrayList<>();
     
 
-    public Player(String username, String email, String password, boolean isDM) {
+    public Player(String username, String email, String password, Rol rol) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.rol = rol;
     }
 }

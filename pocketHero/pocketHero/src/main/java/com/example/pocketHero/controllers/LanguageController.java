@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.annotation.RequestScope;
-
 import com.example.pocketHero.domains.creation.Language;
 import com.example.pocketHero.domains.creation.Specie;
 import com.example.pocketHero.services.LanguageService;
@@ -31,9 +29,6 @@ public class LanguageController {
     @GetMapping("/")
     @Operation(summary = "Get all languages", description = "Gets all the registered languages")
     public ResponseEntity<?> getAllLanguages() {
-        if (languageService.findAllLanguages().isEmpty()) {
-            return new ResponseEntity<>("No languages found", HttpStatus.NOT_FOUND);
-        }
         return new ResponseEntity<>(languageService.findAllLanguages(), HttpStatus.OK);
     }
 

@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.example.pocketHero.domains.creation.Player;
 
-import jakarta.validation.Valid;
-
 
 public interface PlayerService {
 

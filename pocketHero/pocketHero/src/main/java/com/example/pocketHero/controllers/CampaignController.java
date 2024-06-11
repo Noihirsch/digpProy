@@ -75,14 +75,15 @@ public class CampaignController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/campaign")
+    @PostMapping("/create")
     @Operation(summary = "Create campaign", description = "Creates a new campaign")
     public ResponseEntity<?> newCampaign(@Valid @RequestBody NewCampaignDTO newCampaignDTO) {
         Campaign campaign = new Campaign(null,
                 newCampaignDTO.getName(),
                 newCampaignDTO.getDescription(),
                 null,
-                newCampaignDTO.getPlayer());
+                null
+        );
         Campaign campaignSaved = campaignService.newCampaign(campaign);
         return ResponseEntity.status(HttpStatus.CREATED).body(campaignSaved);
     }
