@@ -61,4 +61,5 @@ public class Player {
         this.password = password;
         this.rol = rol;
     }
+
 }

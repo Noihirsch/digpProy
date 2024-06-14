@@ -9,19 +9,26 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
+
 @Getter
 @Setter
+
 public class SignupDto {
-@NotBlank
+    @NotBlank(message = "Username is required")
 @Size(min = 3, max = 20)
 private String username;
-@NotBlank
-@Size(min = 6, max = 40)
-private String password;
-@NotBlank
-@Size(max = 50)
-@Email
-private String email;
-private Rol rol;
+
+
+  @Size(max = 50)
+  @NotBlank(message = "Email is required")
+  @Email
+  private String email;
+
+
+  @NotBlank
+  @Size(min = 6, max = 40)
+  private String password;
+
+  private String rol;
+
 }
